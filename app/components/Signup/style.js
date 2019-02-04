@@ -1,19 +1,30 @@
 import styled from 'styled-components';
 import withRouter from 'react-router-dom/withRouter';
+import image from './image.jpg';
 
 export const Main = styled.div`
 
-      font-size: 15px;
-      margin-top: 10%;
-      border:1px solid #ccc;
-      width: 50%;
-      
+font-size: 15px;
+margin-top: 10%;
+border:1px solid #ccc;
+width: 40%;
+margin-left: auto;
+margin-right: auto;
+background-size: cover;
+background-image: url(${image});
 
-      @media screen and (max-width: 300px) {
-        button {
-           width: 100%;
-        }
-      }
+
+
+@media screen and (max-width: 300px) {
+  button {
+      width: 100%;
+  }
+}
+
+form {
+  margin-left: 6%;
+  width: 88%;
+}
 
       `;
 
@@ -25,8 +36,6 @@ export const Container = styled.div`
 `;
 
 export const Middle = styled.div`
-
-
 
 input[type=text], input[type=password] {
   width: 100%;
@@ -62,7 +71,7 @@ button {
   width: 100%;
   opacity: 0.9;
   float: left;
-  width: 50%;
+  width: 100%;
 }
 
 button:hover {
@@ -76,6 +85,16 @@ button:hover {
 }
 
 
-
 `;
 
+export const SigningUp = styled.div`
+  text-decoration: none;
+  font-size: 15px;
+  background-color: #4CAF50;
+  padding: 14px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  text-align: center;
+`;

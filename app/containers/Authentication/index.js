@@ -32,21 +32,20 @@ export class Authentication extends React.PureComponent {
       <Wrapper>
           <body>
           <Bg>
-              <LoginBox>
+            <LoginBox>
               <Avatar>
-                  <img src={avatar}/>
-                </Avatar>
-                
-                <h1>Login Here</h1>
+                <img src={avatar}/>
+              </Avatar>
+              
+              <h1>Login Here</h1>
               <form>
-                  <p>Username</p>
+                <p>Username</p>
                 <input
                   type="text"
                   name="username"
                   placeholder="Enter Username"
-                  required
-                />
-                  <p>Password</p>
+                  required/>
+                <p>Password</p>
                 <input
                   type="password"
                   name="password"
@@ -54,14 +53,14 @@ export class Authentication extends React.PureComponent {
                   required/>
                 <input type="submit" name="submit" value="Login"/>
                   <a href="#">Forget Password?</a>
-                  <SigningUp>
+                <SigningUp>
                   <Link to="/Signup">Signup</Link>
                 </SigningUp>
               </form>
-              </LoginBox>
+            </LoginBox>
           </Bg>
           </body>
-        </Wrapper>
+      </Wrapper>
     );
   }
 }

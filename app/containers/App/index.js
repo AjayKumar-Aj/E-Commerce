@@ -20,6 +20,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 
 import Signup from 'components/Signup';
+import Homepage from 'components/Homepage';
 import GlobalStyle from '../../global-styles';
 
 const AppWrapper = styled.div``;
@@ -37,6 +38,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Authentication} />
         <Route exact path="/Signup" component={Signup} />
+        <Route exact path="/Homepage" component={Homepage} />
         <Route path="/features" component={FeaturePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
