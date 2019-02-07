@@ -2,18 +2,54 @@ import React, { Component } from 'react';
 import TopBar from 'components/TopBar';
 import { Link } from 'react-router-dom';
 import image from 'components/Signup';
+import DatePicker from "react-datepicker";
+import FindResult from 'components/FindResult';
 
 
-import { Main } from './style.js';
+
+import "react-datepicker/dist/react-datepicker.css";
+
+
+import { LeftDate, RightDate, Login, Button} from './style.js';
+
 
 class Homepage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      startDate: new Date()
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(date) {
+    this.setState({
+      startDate: date
+    });
+  }
+
   render() {
     return (
+      
       <div>
-        <Main>
-            <h1>Sign Up</h1>
-            <p>Please fill in this form to create an account.</p>
-        </Main>
+      <Login>
+        <LeftDate>
+            <DatePicker
+              selected={this.state.startDate}
+              onChange={this.handleChange}
+            />
+        </LeftDate>
+
+        <RightDate>
+            <DatePicker
+              selected={this.state.startDate}
+              onChange={this.handleChange}
+            />
+        </RightDate>
+        <FindResult />
+        
+      </Login>
+      
       </div>
   
   );

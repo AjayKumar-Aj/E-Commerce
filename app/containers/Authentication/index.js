@@ -24,6 +24,7 @@ import image from './image.jpg';
 // import Signup from '.../components/Signup';
 import { Wrapper, Bg, LoginBox, Avatar, SigningUp } from './style.js';
 import messages from './messages';
+import { Button } from 'reactstrap'; 
 
 /* eslint-disable react/prefer-stateless-function */
 export class Authentication extends React.PureComponent {
