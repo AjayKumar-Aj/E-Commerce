@@ -97,7 +97,7 @@ export const SigningUp = styled.div`
   margin-top: -8.5%;
 `;
 
-export const Login = styled.div`
+export const Login = styled.button`
 border: none;
 outline: none;
 height: 40px;
@@ -106,7 +106,7 @@ color: #fff;
 font-size: 18px;
 border-radius: 20px;
 text-align: center;
-  
+
 `;
 
 export const Wrapper = styled.div`

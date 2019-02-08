@@ -29,12 +29,12 @@ class Signup extends Component {
             <Clearfix>
               <SigningUp>
             <Link to="/Homepage">Sign Up</Link></SigningUp>
-              
-            
+
+
             </Clearfix>
 
             <Container>
-              <p>Already have an account? <a href="#">Sign in</a>.</p>
+              <p>Already have an account? <Link to="/">Sign In</Link> </p>
             </Container>
 
           </form>

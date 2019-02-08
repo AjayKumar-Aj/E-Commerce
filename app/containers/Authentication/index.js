@@ -21,13 +21,53 @@ import reducer from './reducer';
 import saga from './saga';
 import avatar from './avatar.png';
 import image from './image.jpg';
+import { auth } from '../firebase';
+
 // import Signup from '.../components/Signup';
 import { Wrapper, Bg, LoginBox, Avatar, SigningUp, Login } from './style.js';
 import messages from './messages';
-import { Button } from 'reactstrap'; 
+import { Button } from 'reactstrap';
 
 /* eslint-disable react/prefer-stateless-function */
+
+const INITIAL_STATE = {
+  email: '',
+  password: '',
+};
+
+const byPropKey = (propertyName, value) => () => ({
+  [propertyName]: value,
+});
+
 export class Authentication extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { ...INITIAL_STATE };
+  }
+
+  handleLogin = () => {
+    console.log('hit');
+    const {
+      email,
+      password,
+    } = this.state;
+
+    const {
+      history,
+    } = this.props;
+
+    auth.doSignInWithEmailAndPassword(email, password)
+      .then(() => {
+        this.setState({ ...INITIAL_STATE });
+        this.props.history.push('/Homepage');
+      })
+      .catch(error => {
+        console.log('failure');
+
+      });
+  }
+
+
   render() {
     return (
       <Wrapper>
@@ -37,30 +77,32 @@ export class Authentication extends React.PureComponent {
               <Avatar>
                 <img src={avatar}/>
               </Avatar>
-              
+
               <h1>Login Here</h1>
-              <form>
+              <form onSubmit={this.handleLogin}>
                 <p>Username</p>
                 <input
                   type="text"
                   name="username"
                   placeholder="Enter Username"
+                  onChange={event => this.setState(byPropKey('email', event.target.value))}
                   required/>
                 <p>Password</p>
                 <input
                   type="password"
                   name="password"
                   placeholder="Enter Password"
+                  onChange={event => this.setState(byPropKey('password', event.target.value))}
                   required/>
-                <Login>
-                  <Link to="/Homepage">Login</Link>
+                <Login type="submit">
+                  Login
                 </Login>
-                <input type="submit" name="submit" value="Login"/>
-                  <a href="#">Forget Password?</a>
-                <SigningUp>
-                  <Link to="/Signup">Signup</Link>
-                </SigningUp>
+
               </form>
+              <a href="#">Forget Password?</a>
+            <SigningUp>
+              <Link to="/Signup">Signup</Link>
+            </SigningUp>
             </LoginBox>
           </Bg>
           </body>
