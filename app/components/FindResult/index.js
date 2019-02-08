@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import MainArea from './MainArea.js';
-import { Find } from './style.js';
+import { Find, Search, Clear } from './style.js';
 
 class FindResult extends Component {
 
@@ -31,9 +31,8 @@ class FindResult extends Component {
     return (
       <div>
         <Find>
-              <button onClick={this.enableList}>Search</button>
-              <button onClick={this.disableList}>Clear</button>
-          
+          <Search><button onClick={this.enableList}>Search</button></Search>
+          <Clear><button onClick={this.disableList}>Clear</button></Clear>
         </Find>
         {this.state.showList && 
           <div>

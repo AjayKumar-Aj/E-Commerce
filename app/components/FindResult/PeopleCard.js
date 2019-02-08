@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardText, CardImg, CardBody,
+import { Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
-import { CardBox,CardImage  } from './style.js';
+import { CardBox, Imgcard, CardText  } from './style.js';
 
 class PeopleCard extends Component {
   constructor(props) {
@@ -12,10 +12,11 @@ class PeopleCard extends Component {
     return (
       <div>
         <CardBox>
-          <CardImg src={image} alt="Card image cap" />
+          <Imgcard>
+          <CardImg src={image} alt="Card image cap" /></Imgcard>
           <CardBody>
             <CardTitle>{name}</CardTitle>
-            <CardSubtitle>{company}</CardSubtitle>
+            <CardSubtitle>{company}</CardSubtitle><br></br>
             <CardText>{description}</CardText>
           </CardBody>
         </CardBox>

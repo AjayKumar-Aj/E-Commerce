@@ -12,24 +12,23 @@ class MainArea extends Component {
           id: 1,
           name: "Taj Lake Palace",
           company: "Udaipur",
-          description: "Met at a party. Will connect with later",
+          description: "Matchless hospitality, award-wining restaurants, impeccable services are offered at Taj Lake Palace in Udaipur.  It comprises 66 well designed rooms and 17 suites that come with modern and essential amenities like LCD TV, electronic safe, mini bar, tea/coffee maker and attached washroom. The hotel features conference room for formal and informal gatherings. Visitors can also relish a boat ride on the scenic lake that surrounds the palace. A variety of Indian and international dishes are tendered at the restaurants which has both indoor and outdoor seating facilities.",
           image: "https://k6u8v6y8.stackpathcdn.com/blog/wp-content/uploads/2014/05/lake-palace-jaipur.jpg"
         },
         {
           id: 2,
-          name: "The Park",
-          company: "Chennai",
-          description: "Met at a party. Will connect with later",
-          image: "https://s-ec.bstatic.com/images/hotel/max1024x768/103/103703163.jpg"
+          name: "The Taj Mahal Palace",
+          company: "Mumbai",
+          description: "An idyllic amalgamation of opulence, comfort and leisure, The Taj Mahal Palace is a 21 years old building in the Colaba region of Mumbai. It has 560 rooms and 44 suites which are designed keeping in mind the taste of today’s travelers. Situated just 20 miles from the international airport, the hotel has been visited by many famous celebrities from India as well as foreign countries like Bill Clinton, Hillary Clinton, Angelina Jolie and many more. The palace offers a wide array of Indian, Chinese, Italian and continental cuisines to gratify the hunger of the visitors.",
+          image: "https://k6u8v6y8.stackpathcdn.com/blog/wp-content/uploads/2014/05/taj-palace-mumbai.jpg"
 
         },
         {
           id: 3,
-          name: "Malbax",
-          company: "Goa",
-          description: "Met at a party. Will connect with later",
-          image: "https://www.google.co.in/imgres?imgurl=https%3A%2F%2Fs-ec.bstatic.com%2Fimages%2Fhotel%2Fmax1024x768%2F103%2F103703163.jpg&imgrefurl=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fin%2Fthe-taj-mahal-palace-mumbai.html&docid=IoxRnFVn2vX9gM&tbnid=dY1judasEwbSnM%3A&vet=10ahUKEwil3_e1pabgAhVDeH0KHUSoB3UQMwg3KAAwAA..i&w=1024&h=619&bih=636&biw=1366&q=taj%20mumbai%20pics%20&ved=0ahUKEwil3_e1pabgAhVDeH0KHUSoB3UQMwg3KAAwAA&iact=mrc&uact=8"
-
+          name: "The Oberoi Amarvilas",
+          company: "Agra",
+          description: "One of the foremost resorts in the globe, The Oberoi Amarvillas tenders comfortable, elegant rooms amidst verdant beauty, and just 600m from the Taj Mahal in the heart of Agra. It tenders a range of activities to pamper the guests. Moreover, its royal interior décor takes you back to the time of kings and queens. Guests can also indulge in an array of spa treatments or take up yoga classes to find their inner self. It tenders plethora of recreational activities that guests can relish during the stay.",
+          image: "https://k6u8v6y8.stackpathcdn.com/blog/wp-content/uploads/2014/05/oberoi-amarvilas-agra.jpg"
         }
       ]
     }

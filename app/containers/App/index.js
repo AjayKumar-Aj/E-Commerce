@@ -17,7 +17,7 @@ import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import TopBar from 'components/TopBar';
 import Header from 'components/Header';
-import Footer from 'components/Footer';
+//import Footer from 'components/Footer';
 
 import Signup from 'components/Signup';
 import FindResult from 'components/FindResult';
@@ -46,7 +46,6 @@ export default function App() {
         <Route path="/features" component={FeaturePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
-      <Footer />
       <GlobalStyle />
     </AppWrapper>
   );

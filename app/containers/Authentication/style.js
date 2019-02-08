@@ -97,6 +97,18 @@ export const SigningUp = styled.div`
   margin-top: -8.5%;
 `;
 
+export const Login = styled.div`
+border: none;
+outline: none;
+height: 40px;
+background: #1c8adb;
+color: #fff;
+font-size: 18px;
+border-radius: 20px;
+text-align: center;
+  
+`;
+
 export const Wrapper = styled.div`
   body {
   }
