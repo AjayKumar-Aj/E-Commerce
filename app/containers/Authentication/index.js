@@ -21,50 +21,83 @@ import reducer from './reducer';
 import saga from './saga';
 import avatar from './avatar.png';
 import image from './image.jpg';
+import { auth } from '../firebase';
 // import Signup from '.../components/Signup';
-import { Wrapper, Bg, LoginBox, Avatar, SigningUp, Login } from './style.js';
+import { Wrapper, Bg, LoginBox, Avatar, SigningUp, Login, CenterContainer, Button, BoxText, InputBox, AdditionalFormData  } from './style.js';
+
 import messages from './messages';
-import { Button } from 'reactstrap'; 
 
 /* eslint-disable react/prefer-stateless-function */
+const byPropKey = (propertyName, value) => () => ({
+  [propertyName]: value,
+});
+
+const INITIAL_STATE = {
+  email: '',
+  password: '',
+  error: null,
+};
+
 export class Authentication extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { ...INITIAL_STATE };
+  }
+
+  onSubmit = (event) => {
+    const {
+      email,
+      password,
+    } = this.state;
+
+    const {
+      history,
+    } = this.props;
+
+    auth.doSignInWithEmailAndPassword(email, password)
+      .then(() => {
+        console.log('hitting');
+        this.setState({ ...INITIAL_STATE });
+        this.props.history.push('/Homepage');
+      })
+      .catch(error => {
+        this.setState(byPropKey('error', error));
+      });
+    event.preventDefault();
+  }
+
   render() {
+    const {
+      email,
+      password,
+      error,
+    } = this.state;
+
+    const isInvalid =
+      password === '' ||
+      email === '';
     return (
       <Wrapper>
-          <body>
-          <Bg>
-            <LoginBox>
-              <Avatar>
-                <img src={avatar}/>
-              </Avatar>
-              
-              <h1>Login Here</h1>
-              <form>
-                <p>Username</p>
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Enter Username"
-                  required/>
-                <p>Password</p>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Enter Password"
-                  required/>
-                <Login>
-                  <Link to="/Homepage">Login</Link>
-                </Login>
-                <input type="submit" name="submit" value="Login"/>
-                  <a href="#">Forget Password?</a>
-                <SigningUp>
-                  <Link to="/Signup">Signup</Link>
-                </SigningUp>
-              </form>
-            </LoginBox>
-          </Bg>
-          </body>
-      </Wrapper>
+       <form onSubmit={this.onSubmit}>
+        <InputBox
+          value={email}
+          onChange={event => this.setState(byPropKey('email', event.target.value))}
+          type="text"
+          placeholder="Email Address"
+        />
+        <InputBox
+          value={password}
+          onChange={event => this.setState(byPropKey('password', event.target.value))}
+          type="password"
+          placeholder="Password"
+        />
+        <Button disabled={isInvalid} type="submit">
+          Sign In
+        </Button>
+
+        { error && <p>{error.message}</p> }
+      </form>      </Wrapper>
+
     );
   }
 }
