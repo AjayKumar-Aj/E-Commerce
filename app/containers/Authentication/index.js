@@ -22,7 +22,7 @@ import saga from './saga';
 import avatar from './avatar.png';
 import image from './image.jpg';
 // import Signup from '.../components/Signup';
-import { Wrapper, Bg, LoginBox, Avatar, SigningUp, Login } from './style.js';
+import { Wrapper, Bg, LoginBox, Avatar, SigningUp, Login, Forget } from './style.js';
 import messages from './messages';
 import { Button } from 'reactstrap'; 
 
@@ -53,10 +53,11 @@ export class Authentication extends React.PureComponent {
                   placeholder="Enter Password"
                   required/>
                 <Login>
-                  <Link to="/Homepage">Login</Link>
+                  <Link to="/Homepage" class="menu">Login</Link>
                 </Login>
-                <input type="submit" name="submit" value="Login"/>
-                  <a href="#">Forget Password?</a>
+                <Forget>
+                <a href="#">Forget Password?</a>
+                </Forget>
                 <SigningUp>
                   <Link to="/Signup">Signup</Link>
                 </SigningUp>

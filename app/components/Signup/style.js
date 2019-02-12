@@ -5,9 +5,10 @@ import image from './image.jpg';
 export const Main = styled.div`
 
 font-size: 15px;
-margin-top: 10%;
+margin-top: 4.7%;
 border:1px solid #ccc;
-width: 40%;
+width: 100%;
+height: 640px;
 margin-left: auto;
 margin-right: auto;
 background-size: cover;
@@ -22,16 +23,29 @@ background-image: url(${image});
 }
 
 form {
-  margin-left: 6%;
-  width: 88%;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+  margin-top: 2.5%;
 }
 
-      `;
+`;
+
+export const BoxModel = styled.div`
+
+      width: 90%;
+      margin-left: auto;
+  margin-right: auto;
+
+
+`;
 
 export const Container = styled.div`
 
       background-color: #f1f1f1;
       text-align: center;
+      margin-top: 5%;
 
 `;
 
@@ -56,45 +70,36 @@ hr {
   margin-bottom: 25px;
 }
 
-
-`;
-
-export const Clearfix = styled.div`
-
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  float: left;
-  width: 100%;
-}
-
-button:hover {
-  opacity:1;
-}
-
-::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-
 `;
 
 export const SigningUp = styled.div`
-  text-decoration: none;
-  font-size: 15px;
-  background-color: #4CAF50;
-  padding: 14px 20px;
-  margin: 8px 0;
+
+border: none;
+outline: none;
+height: 40px;
+background-color: #4CAF50;
+color: #fff;
+border-radius: 20px;
+text-align: center;
+font-weight: bold;
+font-size: 20px;
+
+
+:hover {
   cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  text-align: center;
+  color: #000;
+  
+}
+
+.menu 
+{
+display: block;
+width: 100%;
+height: 100%;
+color: #fff;
+position: relative;
+top: 3px; 
+
+}
+
 `;

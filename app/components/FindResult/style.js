@@ -5,7 +5,7 @@ export const Find = styled.div`
 
 display: flex;
 margin-left: 65%;
-margin-top: -4%;
+margin-top: -2.65%;
 
 `;
 
@@ -14,7 +14,7 @@ export const Search = styled.div`
 background-color: #4CAF50;
 border: 1px solid black;
 color: white;
-padding: 3px 3px;
+padding: 2px 2px;
 text-align: center; 
 width: 40%;
 
@@ -25,7 +25,7 @@ export const Clear = styled.div`
 background-color: #f44336;
 border: 1px solid black;
 color: white;
-padding: 3px 3px;
+padding: 2px 2px;
 text-align: center; 
 width: 40%;
   

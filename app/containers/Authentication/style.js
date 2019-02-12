@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import image from './image.jpg';
 
 export const Bg = styled.div`
-  width: 1349px;
-  height: 800px;
+  width: 1366px;
+  height: 635px;
   margin: 0;
   padding: 0;
   background-image: url(${image});
@@ -54,12 +54,7 @@ export const LoginBox = styled.div`
     border-radius: 20px;
   }
 
-  input[type='submit']:hover {
-    cursor: pointer;
-    background: #39dc79;
-    color: #000;
-  }
-
+  
   a {
     text-decoration: none;
     font-size: 14px;
@@ -89,6 +84,10 @@ export const Avatar = styled.div`
   }
 `;
 
+export const Forget = styled.div`
+margin-top: 8.5%;
+`;
+
 export const SigningUp = styled.div`
   text-decoration: none;
   font-size: 20px;
@@ -103,10 +102,31 @@ outline: none;
 height: 40px;
 background: #1c8adb;
 color: #fff;
-font-size: 18px;
 border-radius: 20px;
 text-align: center;
+font-weight: bold;
+font-size: 20px;
+
+
+:hover {
   
+  cursor: pointer;
+  color: #000000;
+  width: 100%;
+  
+}
+
+.menu 
+{
+display: block;
+width: 100%;
+height: 100%;
+position: relative;
+top: 20%;
+left: auto;
+right: auto;
+}
+
 `;
 
 export const Wrapper = styled.div`
