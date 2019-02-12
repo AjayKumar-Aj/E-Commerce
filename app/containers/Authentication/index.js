@@ -78,43 +78,6 @@ export class Authentication extends React.PureComponent {
       email === '';
     return (
       <Wrapper>
-<<<<<<< HEAD
-          <body>
-          <Bg>
-            <LoginBox>
-              <Avatar>
-                <img src={avatar}/>
-              </Avatar>
-              
-              <h1>Login Here</h1>
-              <form>
-                <p>Username</p>
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Enter Username"
-                  required/>
-                <p>Password</p>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Enter Password"
-                  required/>
-                <Login>
-                  <Link to="/Homepage" class="menu">Login</Link>
-                </Login>
-                <Forget>
-                <a href="#">Forget Password?</a>
-                </Forget>
-                <SigningUp>
-                  <Link to="/Signup">Signup</Link>
-                </SigningUp>
-              </form>
-            </LoginBox>
-          </Bg>
-          </body>
-      </Wrapper>
-=======
        <form onSubmit={this.onSubmit}>
         <InputBox
           value={email}
@@ -133,9 +96,9 @@ export class Authentication extends React.PureComponent {
         </Button>
 
         { error && <p>{error.message}</p> }
-      </form>      </Wrapper>
+      </form>
+      </Wrapper>
 
->>>>>>> 143a56ab6660b418481fa85e55dee16f4ab65a08
     );
   }
 }

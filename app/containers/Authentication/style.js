@@ -54,7 +54,7 @@ export const LoginBox = styled.div`
     border-radius: 20px;
   }
 
-  
+
   a {
     text-decoration: none;
     font-size: 14px;
@@ -104,20 +104,19 @@ background: #1c8adb;
 color: #fff;
 border-radius: 20px;
 text-align: center;
-<<<<<<< HEAD
 font-weight: bold;
 font-size: 20px;
 
 
 :hover {
-  
+
   cursor: pointer;
   color: #000000;
   width: 100%;
-  
+
 }
 
-.menu 
+.menu
 {
 display: block;
 width: 100%;
@@ -127,8 +126,6 @@ top: 20%;
 left: auto;
 right: auto;
 }
-=======
->>>>>>> 143a56ab6660b418481fa85e55dee16f4ab65a08
 
 `;
 
