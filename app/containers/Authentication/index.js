@@ -21,16 +21,64 @@ import reducer from './reducer';
 import saga from './saga';
 import avatar from './avatar.png';
 import image from './image.jpg';
+import { auth } from '../firebase';
 // import Signup from '.../components/Signup';
-import { Wrapper, Bg, LoginBox, Avatar, SigningUp, Login, Forget } from './style.js';
+import { Wrapper, Bg, LoginBox, Avatar, SigningUp, Login, Forget, CenterContainer, Button, BoxText, InputBox, AdditionalFormData  } from './style.js';
+
 import messages from './messages';
-import { Button } from 'reactstrap'; 
 
 /* eslint-disable react/prefer-stateless-function */
+const byPropKey = (propertyName, value) => () => ({
+  [propertyName]: value,
+});
+
+const INITIAL_STATE = {
+  email: '',
+  password: '',
+  error: null,
+};
+
 export class Authentication extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { ...INITIAL_STATE };
+  }
+
+  onSubmit = (event) => {
+    const {
+      email,
+      password,
+    } = this.state;
+
+    const {
+      history,
+    } = this.props;
+
+    auth.doSignInWithEmailAndPassword(email, password)
+      .then(() => {
+        console.log('hitting');
+        this.setState({ ...INITIAL_STATE });
+        this.props.history.push('/Homepage');
+      })
+      .catch(error => {
+        this.setState(byPropKey('error', error));
+      });
+    event.preventDefault();
+  }
+
   render() {
+    const {
+      email,
+      password,
+      error,
+    } = this.state;
+
+    const isInvalid =
+      password === '' ||
+      email === '';
     return (
       <Wrapper>
+<<<<<<< HEAD
           <body>
           <Bg>
             <LoginBox>
@@ -66,6 +114,28 @@ export class Authentication extends React.PureComponent {
           </Bg>
           </body>
       </Wrapper>
+=======
+       <form onSubmit={this.onSubmit}>
+        <InputBox
+          value={email}
+          onChange={event => this.setState(byPropKey('email', event.target.value))}
+          type="text"
+          placeholder="Email Address"
+        />
+        <InputBox
+          value={password}
+          onChange={event => this.setState(byPropKey('password', event.target.value))}
+          type="password"
+          placeholder="Password"
+        />
+        <Button disabled={isInvalid} type="submit">
+          Sign In
+        </Button>
+
+        { error && <p>{error.message}</p> }
+      </form>      </Wrapper>
+
+>>>>>>> 143a56ab6660b418481fa85e55dee16f4ab65a08
     );
   }
 }

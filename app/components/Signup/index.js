@@ -27,12 +27,24 @@ class Signup extends Component {
               <input type="password" placeholder="Repeat Password" name="psw-repeat" required/>
             </Middle>
 
+<<<<<<< HEAD
             <SigningUp>
               <Link to="/Homepage" class="menu">Sign Up</Link>
             </SigningUp>
 
             <Container>
               <p>Already have an account? <a href="http://localhost:3000/">Sign in</a>.</p>
+=======
+            <Clearfix>
+              <SigningUp>
+            <Link to="/Homepage">Sign Up</Link></SigningUp>
+
+
+            </Clearfix>
+
+            <Container>
+              <p>Already have an account? <Link to="/">Sign In</Link> </p>
+>>>>>>> 143a56ab6660b418481fa85e55dee16f4ab65a08
             </Container>
             </BoxModel>
           </form>
