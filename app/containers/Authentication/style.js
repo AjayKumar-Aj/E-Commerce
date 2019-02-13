@@ -2,14 +2,28 @@ import styled from 'styled-components';
 import image from './image.jpg';
 
 export const Bg = styled.div`
-  width: 1366px;
-  height: 635px;
-  margin: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 7%;
   padding: 0;
-  background-image: url(${image});
+  backgroundImage: "url(" + { Background } + ")" ;
   background-size: cover;
   background-position: center;
   font-family: sans-serif;
+`;
+
+export const InsideForm = styled.div`
+  margin-top: 5%;
+`;
+
+export const ForgetPassword = styled.div`
+  margin-left: 16%;
+  margin-top: 5%;
+`;
+
+export const SignUp = styled.div`
+  margin-left: 75%;
+  margin-top: -3.6%;
 `;
 
 export const LoginBox = styled.div`
@@ -130,7 +144,19 @@ right: auto;
 `;
 
 export const Wrapper = styled.div`
-  margin-top: 100px;
+  
+  
+  
+  
+`;
+
+export const Form = styled.div`
+    border: 1px solid #000000;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10%;
+    height: 70%;
 `;
 
 
@@ -197,6 +223,8 @@ export const Button = styled.button`
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
   margin-bottom: 10px;
   outline: none;
+  margin-left: 40%;
+  
 `;
 
 export const MainBody = styled.div`
@@ -228,7 +256,10 @@ export const Content = styled.p`
 `;
 
 export const InputBox = styled.input`
-  width: 76%;
+  width: 70%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
   color: rgb(38, 50, 56);
   font-weight: 700;
   font-size: 14px;

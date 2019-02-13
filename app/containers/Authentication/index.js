@@ -20,10 +20,10 @@ import makeSelectAuthentication from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import avatar from './avatar.png';
-import image from './image.jpg';
+import Background from './image.jpg';
 import { auth } from '../firebase';
 // import Signup from '.../components/Signup';
-import { Wrapper, Bg, LoginBox, Avatar, SigningUp, Login, Forget, CenterContainer, Button, BoxText, InputBox, AdditionalFormData  } from './style.js';
+import { Wrapper, ForgetPassword, SignUp, Bg, Form, InsideForm, LoginBox, Avatar, SigningUp, Login, Forget, CenterContainer, Button, BoxText, InputBox, AdditionalFormData  } from './style.js';
 
 import messages from './messages';
 
@@ -78,6 +78,10 @@ export class Authentication extends React.PureComponent {
       email === '';
     return (
       <Wrapper>
+        <Bg>
+        <img src={ Background } />
+        <Form>
+          <InsideForm>
        <form onSubmit={this.onSubmit}>
         <InputBox
           value={email}
@@ -94,9 +98,19 @@ export class Authentication extends React.PureComponent {
         <Button disabled={isInvalid} type="submit">
           Sign In
         </Button>
+        <ForgetPassword>
+              <Link to="/Homepage" class="fp">Forget Password ?</Link>
+        </ForgetPassword>
+        <SignUp>
+          <Link to="/Homepage" class="su">Sign Up</Link>
+        </SignUp>
+        
 
         { error && <p>{error.message}</p> }
       </form>
+      </InsideForm>
+      </Form>
+      </Bg>
       </Wrapper>
 
     );
