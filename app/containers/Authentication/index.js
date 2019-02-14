@@ -21,9 +21,10 @@ import reducer from './reducer';
 import saga from './saga';
 import avatar from './avatar.png';
 import Background from './image.jpg';
+import Logo from './avatar.png';
 import { auth } from '../firebase';
 // import Signup from '.../components/Signup';
-import { Wrapper, ForgetPassword, SignUp, Bg, Form, InsideForm, LoginBox, Avatar, SigningUp, Login, Forget, CenterContainer, Button, BoxText, InputBox, AdditionalFormData  } from './style.js';
+import { Wrapper, ForgetPassword, SignUp, Form, InsideForm, Button, InputBox, Avatar} from './style.js';
 
 import messages from './messages';
 
@@ -78,8 +79,9 @@ export class Authentication extends React.PureComponent {
       email === '';
     return (
       <Wrapper>
-        <Bg>
-        <img src={ Background } />
+        <img class="img" src={ Background } />
+        <Avatar><img class="img" src={ Logo } /></Avatar>
+
         <Form>
           <InsideForm>
        <form onSubmit={this.onSubmit}>
@@ -102,7 +104,7 @@ export class Authentication extends React.PureComponent {
               <Link to="/Homepage" class="fp">Forget Password ?</Link>
         </ForgetPassword>
         <SignUp>
-          <Link to="/Homepage" class="su">Sign Up</Link>
+          <Link to="/Signup" class="su">Sign Up</Link>
         </SignUp>
         
 
@@ -110,7 +112,7 @@ export class Authentication extends React.PureComponent {
       </form>
       </InsideForm>
       </Form>
-      </Bg>
+
       </Wrapper>
 
     );

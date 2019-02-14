@@ -13,7 +13,7 @@ export const Bg = styled.div`
 `;
 
 export const InsideForm = styled.div`
-  margin-top: 5%;
+  margin-top: 10%;
 `;
 
 export const ForgetPassword = styled.div`
