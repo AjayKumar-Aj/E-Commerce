@@ -2,6 +2,48 @@ import styled from 'styled-components';
 import withRouter from 'react-router-dom/withRouter';
 import image from './image.jpg';
 
+export const InputBox = styled.input`
+  width: 70%;
+  display: flex;
+  background: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 27px;
+  :focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+  }
+`;
+
+export const Button = styled.button`
+  cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #9c27b0, #e040fb);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  margin-bottom: 10px;
+  outline: none;
+  margin-left: 40%;
+`;
+
 export const Main = styled.div`
 
 font-size: 15px;
@@ -88,17 +130,17 @@ font-size: 20px;
 :hover {
   cursor: pointer;
   color: #000;
-  
+
 }
 
-.menu 
+.menu
 {
 display: block;
 width: 100%;
 height: 100%;
 color: #fff;
 position: relative;
-top: 3px; 
+top: 3px;
 
 }
 

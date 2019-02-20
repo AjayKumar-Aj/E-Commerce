@@ -1,13 +1,45 @@
 import React, { Component } from 'react';
 import TopBar from 'components/TopBar';
+import { auth } from './firebase';
 import { Link } from 'react-router-dom';
 import image from 'components/Signup';
+import { Container, Main, Middle, Clearfix, Button, InputBox, SigningUp, BoxModel } from './style.js';
 
+const byPropKey = (propertyName, value) => () => ({
+  [propertyName]: value,
+});
 
-import { Container, Main, Middle, Clearfix, SigningUp, BoxModel } from './style.js';
+const INITIAL_STATE = {
+  email: '',
+  password: '',
+  error: null,
+};
+
 
 class Signup extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { ...INITIAL_STATE };
+  }
+
+  onSubmit = event => {
+    const { email, password } = this.state;
+
+    const { history } = this.props;
+
+    auth.doCreateUserWithEmailAndPassword(email, password).then(() => {
+        this.setState({ ...INITIAL_STATE });
+        this.props.history.push('/Homepage');
+      })
+      .catch(error => {
+        this.setState(byPropKey('error', error));
+      });
+    event.preventDefault();
+  };
+
   render() {
+    const { email, password, error } = this.state;
+    const isInvalid = password === '' || email === '';
     return (
       <div>
         <Main>
@@ -16,20 +48,29 @@ class Signup extends Component {
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
 
-            <Middle>
-              <label for="email"><b>Email</b></label>
-              <input type="text" placeholder="Enter Email" name="email" required/>
+            <form onSubmit={this.onSubmit}>
+              <InputBox
+                value={email}
+                onChange={event =>
+                  this.setState(byPropKey('email', event.target.value))
+                }
+                type="text"
+                placeholder="Email Address"
+              />
+              <InputBox
+                value={password}
+                onChange={event =>
+                  this.setState(byPropKey('password', event.target.value))
+                }
+                type="password"
+                placeholder="Password"
+              />
+              <Button disabled={isInvalid} type="submit">
+                Sign In
+              </Button>
 
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required/>
-
-              <label for="psw-repeat"><b>Repeat Password</b></label>
-              <input type="password" placeholder="Repeat Password" name="psw-repeat" required/>
-            </Middle>
-
-            <SigningUp>
-              <Link to="/Homepage" class="menu">Sign Up</Link>
-            </SigningUp>
+              {error && <p>{error.message}</p>}
+            </form>
 
             <Container>
               <p>Already have an account? <a href="http://localhost:3000/">Sign in</a>.</p>
