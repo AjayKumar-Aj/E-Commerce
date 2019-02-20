@@ -5,8 +5,6 @@ import image from 'components/Signup';
 import DatePicker from "react-datepicker";
 import FindResult from 'components/FindResult';
 
-
-
 import "react-datepicker/dist/react-datepicker.css";
 
 
@@ -28,6 +26,7 @@ class Homepage extends Component {
     });
   }
 
+
   render() {
     return (
       
@@ -47,6 +46,7 @@ class Homepage extends Component {
             />
         </RightDate>
         <FindResult />
+        
         
       </Login>
       

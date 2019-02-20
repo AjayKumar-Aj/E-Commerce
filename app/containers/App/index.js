@@ -25,6 +25,7 @@ import Homepage from 'components/Homepage';
 import GlobalStyle from '../../global-styles';
 import { Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import ResetPassword from '../../components/ResetPassword';
 
 const AppWrapper = styled.div``;
 
@@ -41,6 +42,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Authentication} />
         <Route exact path="/Signup" component={Signup} />
+        <Route exact path="/ResetPassword" component={ResetPassword} />
         <Route exact path="/FindResult" component={FindResult} />
         <Route exact path="/Homepage" component={Homepage} />
         <Route path="/features" component={FeaturePage} />

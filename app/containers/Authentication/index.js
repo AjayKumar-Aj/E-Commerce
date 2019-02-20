@@ -8,8 +8,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import { Helmet } from 'react-helmet';
-import { Helmet } from './style.js';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { Link } from 'react-router-dom';
@@ -19,14 +17,21 @@ import injectReducer from 'utils/injectReducer';
 import makeSelectAuthentication from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import avatar from './avatar.png';
 import Background from './image.jpg';
 import Logo from './avatar.png';
 import { auth } from '../firebase';
-// import Signup from '.../components/Signup';
-import { Wrapper, ForgetPassword, SignUp, Form, InsideForm, Button, InputBox, Avatar} from './style.js';
 
-import messages from './messages';
+// import Signup from '.../components/Signup';
+import {
+  Wrapper,
+  ForgetPassword,
+  SignUp,
+  Form,
+  InsideForm,
+  Button,
+  InputBox,
+  Avatar,
+} from './style.js';
 
 /* eslint-disable react/prefer-stateless-function */
 const byPropKey = (propertyName, value) => () => ({
@@ -45,17 +50,13 @@ export class Authentication extends React.PureComponent {
     this.state = { ...INITIAL_STATE };
   }
 
-  onSubmit = (event) => {
-    const {
-      email,
-      password,
-    } = this.state;
+  onSubmit = event => {
+    const { email, password } = this.state;
 
-    const {
-      history,
-    } = this.props;
+    const { history } = this.props;
 
-    auth.doSignInWithEmailAndPassword(email, password)
+    auth
+      .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         console.log('hitting');
         this.setState({ ...INITIAL_STATE });
@@ -65,56 +66,57 @@ export class Authentication extends React.PureComponent {
         this.setState(byPropKey('error', error));
       });
     event.preventDefault();
-  }
+  };
 
   render() {
-    const {
-      email,
-      password,
-      error,
-    } = this.state;
+    const { email, password, error } = this.state;
 
-    const isInvalid =
-      password === '' ||
-      email === '';
+    const isInvalid = password === '' || email === '';
     return (
       <Wrapper>
-        <img class="img" src={ Background } />
-        <Avatar><img class="img" src={ Logo } /></Avatar>
+        <img class="img" src={Background} />
+        <Avatar>
+          <img class="img" src={Logo} />
+        </Avatar>
 
         <Form>
           <InsideForm>
-       <form onSubmit={this.onSubmit}>
-        <InputBox
-          value={email}
-          onChange={event => this.setState(byPropKey('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
-        />
-        <InputBox
-          value={password}
-          onChange={event => this.setState(byPropKey('password', event.target.value))}
-          type="password"
-          placeholder="Password"
-        />
-        <Button disabled={isInvalid} type="submit">
-          Sign In
-        </Button>
-        <ForgetPassword>
-              <Link to="/Homepage" class="fp">Forget Password ?</Link>
-        </ForgetPassword>
-        <SignUp>
-          <Link to="/Signup" class="su">Sign Up</Link>
-        </SignUp>
-        
+            <form onSubmit={this.onSubmit}>
+              <InputBox
+                value={email}
+                onChange={event =>
+                  this.setState(byPropKey('email', event.target.value))
+                }
+                type="text"
+                placeholder="Email Address"
+              />
+              <InputBox
+                value={password}
+                onChange={event =>
+                  this.setState(byPropKey('password', event.target.value))
+                }
+                type="password"
+                placeholder="Password"
+              />
+              <Button disabled={isInvalid} type="submit">
+                Sign In
+              </Button>
+              <ForgetPassword>
+                <Link to="/ResetPassword" class="fp">
+                  Forget Password ?
+                </Link>
+              </ForgetPassword>
+              <SignUp>
+                <Link to="/Signup" class="su">
+                  Sign Up
+                </Link>
+              </SignUp>
 
-        { error && <p>{error.message}</p> }
-      </form>
-      </InsideForm>
-      </Form>
-
+              {error && <p>{error.message}</p>}
+            </form>
+          </InsideForm>
+        </Form>
       </Wrapper>
-
     );
   }
 }
