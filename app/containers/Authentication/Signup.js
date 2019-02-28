@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TopBar from 'components/TopBar';
 import { Link } from 'react-router-dom';
-import image from 'components/Signup';
+//import image from 'components/Signup';
 
 
 import { Container, Main, Middle, Clearfix, SigningUp, BoxModel } from './style.js';

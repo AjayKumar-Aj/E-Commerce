@@ -102,7 +102,7 @@ export class Authentication extends React.PureComponent {
                 Sign In
               </Button>
               <ForgetPassword>
-                <Link to="/ResetPassword" class="fp">
+                <Link to="/ResetPass" class="fp">
                   Forget Password ?
                 </Link>
               </ForgetPassword>

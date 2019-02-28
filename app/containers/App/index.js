@@ -15,17 +15,19 @@ import HomePage from 'containers/HomePage/Loadable';
 import Authentication from 'containers/Authentication/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import TopBar from 'components/TopBar';
+//import TopBar from 'components/TopBar';
 import Header from 'components/Header';
 //import Footer from 'components/Footer';
 
-import Signup from 'components/Signup';
+import Signup from '../Authentication/Signup';
+import TopBar from '../../components/TopBar';
 import FindResult from 'components/FindResult';
-import Homepage from 'components/Homepage';
+import Homepage from '../Authentication/Homepage';
+import ResetPass from '../Authentication/ResetPass';
 import GlobalStyle from '../../global-styles';
-import { Button } from 'reactstrap';
+//import { Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import ResetPassword from '../../components/ResetPassword';
+//import ResetPassword from '../Authentication/ResetPass';
 
 const AppWrapper = styled.div``;
 
@@ -42,7 +44,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Authentication} />
         <Route exact path="/Signup" component={Signup} />
-        <Route exact path="/ResetPassword" component={ResetPassword} />
+        <Route exact path="/ResetPass" component={ResetPass} />
         <Route exact path="/FindResult" component={FindResult} />
         <Route exact path="/Homepage" component={Homepage} />
         <Route path="/features" component={FeaturePage} />

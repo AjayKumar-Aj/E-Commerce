@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import TopBar from 'components/TopBar';
 import { Link } from 'react-router-dom';
-import image from 'components/Signup';
+// import image from './Signup';
 import DatePicker from "react-datepicker";
 import FindResult from 'components/FindResult';
-
+import TopBar from 'components/TopBar';
 import "react-datepicker/dist/react-datepicker.css";
 
 
-import { LeftDate, RightDate, Login, Button} from './style.js';
+import { LeftDate, RightDate, Login} from './style.js';
 
 
 class Homepage extends Component {
