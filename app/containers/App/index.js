@@ -22,7 +22,6 @@ import Header from 'components/Header';
 import Signup from '../Authentication/Signup';
 import TopBar from '../../components/TopBar';
 import FindResult from 'components/FindResult';
-import Homepage from '../Authentication/Homepage';
 import ResetPass from '../Authentication/ResetPass';
 import GlobalStyle from '../../global-styles';
 //import { Button } from 'reactstrap';
@@ -46,7 +45,7 @@ export default function App() {
         <Route exact path="/Signup" component={Signup} />
         <Route exact path="/ResetPass" component={ResetPass} />
         <Route exact path="/FindResult" component={FindResult} />
-        <Route exact path="/Homepage" component={Homepage} />
+        <Route exact path="/Homepage" component={HomePage} />
         <Route path="/features" component={FeaturePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>

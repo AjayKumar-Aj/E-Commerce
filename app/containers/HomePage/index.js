@@ -53,38 +53,43 @@ export class HomePage extends React.PureComponent {
     };
 
     return (
-      <article>
-        <Helmet>
-          <title>Home SDFD Page</title>
-          <meta
-            name="description"
-            content="A React.js Boilerplate application homepage"
-          />
-        </Helmet>
-        <div>
-          <Section>
-            <H2>
-              <FormattedMessage {...messages.trymeHeader} />
-            </H2>
-            <Form onSubmit={this.props.onSubmitForm}>
-              <label htmlFor="username">
-                <FormattedMessage {...messages.trymeMessage} />
-                <AtPrefix>
-                  <FormattedMessage {...messages.trymeAtPrefix} />
-                </AtPrefix>
-                <Input
-                  id="username"
-                  type="text"
-                  placeholder="mxstbr"
-                  value={this.props.username}
-                  onChange={this.props.onChangeUsername}
-                />
-              </label>
-            </Form>
-            <ReposList {...reposListProps} />
-          </Section>
-        </div>
-      </article>
+      <div>
+        HomePageasasfafaf
+        afs
+
+        asfafs
+
+        afs
+        afs
+        asfafsafs
+
+        asf
+        
+        <div>asf</div>asf
+        <div>asf</div>asf
+        <div>asf</div>asf
+        <div>asf</div>asf
+        <div>asf</div>asf
+
+        <div>asf</div>asf
+        <div>asf</div>asf
+        <div>asf</div>asf
+        <div>asf</div>asf
+        <div>asf</div>asf
+        asfafsfsa
+        FormattedMessagefsa
+        sagafsa
+        FormattedMessagefsa
+        FormattedMessagefsaa
+        FormattedMessagefsaa
+        fa
+        a
+        fa
+        a
+        a
+        a
+      
+      </div> 
     );
   }
 }

@@ -25,13 +25,15 @@ class Homepage extends Component {
     });
   }
 
-
   render() {
     return (
       
       <div>
       <Login>
+      <p> test </p> 
+
         <LeftDate>
+          
             <DatePicker
               selected={this.state.startDate}
               onChange={this.handleChange}
@@ -51,8 +53,8 @@ class Homepage extends Component {
       
       </div>
   
-  );
-}
+    );
+  }
 }
 
 export default Homepage;

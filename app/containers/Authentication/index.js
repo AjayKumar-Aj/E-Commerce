@@ -76,10 +76,11 @@ export class Authentication extends React.PureComponent {
       <Wrapper>
         <img class="img" src={Background} />
         <Avatar>
-          <img class="img" src={Logo} />
-        </Avatar>
+          <img class="img1" src={Logo} />
+        
 
         <Form>
+        <img class="img1" src={Logo} />
           <InsideForm>
             <form onSubmit={this.onSubmit}>
               <InputBox
@@ -116,6 +117,7 @@ export class Authentication extends React.PureComponent {
             </form>
           </InsideForm>
         </Form>
+        </Avatar>
       </Wrapper>
     );
   }
