@@ -32,6 +32,10 @@ import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import DatePicker from "react-datepicker";
+import FindResult from 'components/FindResult';
+import { LeftDate, RightDate, Login} from './style.js';
+
 
 /* eslint-disable react/prefer-stateless-function */
 export class HomePage extends React.PureComponent {
@@ -44,6 +48,31 @@ export class HomePage extends React.PureComponent {
     }
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      startDate: new Date(),
+      
+    };
+    
+    this.handleChange = this.handleChange.bind(this),
+    this.makeApiCall = this.makeApiCall.bind(this);  
+  }
+
+  makeApiCall() {
+    this.setState({data: 'Api Call...'})
+  }
+
+  handleChange(date) {
+    this.setState({
+      startDate: date
+    });
+  }
+
+  //makeApiCall() {
+    //console.log('api');
+  //}
+
   render() {
     const { loading, error, repos } = this.props;
     const reposListProps = {
@@ -54,42 +83,33 @@ export class HomePage extends React.PureComponent {
 
     return (
       <div>
-        HomePageasasfafaf
-        afs
-
-        asfafs
-
-        afs
-        afs
-        asfafsafs
-
-        asf
-        
-        <div>asf</div>asf
-        <div>asf</div>asf
-        <div>asf</div>asf
-        <div>asf</div>asf
-        <div>asf</div>asf
-
-        <div>asf</div>asf
-        <div>asf</div>asf
-        <div>asf</div>asf
-        <div>asf</div>asf
-        <div>asf</div>asf
-        asfafsfsa
-        FormattedMessagefsa
-        sagafsa
-        FormattedMessagefsa
-        FormattedMessagefsaa
-        FormattedMessagefsaa
-        fa
-        a
-        fa
-        a
-        a
-        a
+      <Login>
+      <button class="test" onClick={this.makeApiCall}>Test </button>
+      <h4>{this.state.data}</h4>
       
-      </div> 
+
+        <LeftDate>
+          
+            <DatePicker
+              selected={this.state.startDate}
+              onChange={this.handleChange}
+            />
+        </LeftDate>
+
+        <RightDate>
+            <DatePicker
+              selected={this.state.startDate}
+              onChange={this.handleChange}
+            />
+        </RightDate>
+        <FindResult />
+        
+        
+      </Login>
+      
+      </div>
+      
+      
     );
   }
 }
