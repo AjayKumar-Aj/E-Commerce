@@ -8,7 +8,8 @@ import { reposLoaded, repoLoadingError } from 'containers/App/actions';
 
 import request from 'utils/request';
 import { makeSelectUsername } from 'containers/HomePage/selectors';
-
+import { MAKE_API_CALL } from './constants';
+import { storeResponse } from './actions';
 /**
  * Github repos request/response handler
  */
@@ -26,6 +27,21 @@ export function* getRepos() {
   }
 }
 
+export function* makeApiCall() {
+  // Select username from store
+  console.log('sagas');
+  const requestURL = `https://jsonplaceholder.typicode.com/todos/1`;
+
+  try {
+    // Call our request helper (see 'utils/request')
+    const response = yield call(request, requestURL);
+    console.log('response', response);
+    yield put(storeResponse(response));
+  } catch (err) {
+    console.log('err', err);
+  }
+}
+
 /**
  * Root saga manages watcher lifecycle
  */
@@ -35,4 +51,5 @@ export default function* githubData() {
   // It returns task descriptor (just like fork) so we can continue execution
   // It will be cancelled automatically on component unmount
   yield takeLatest(LOAD_REPOS, getRepos);
+  yield takeLatest(MAKE_API_CALL, makeApiCall);
 }

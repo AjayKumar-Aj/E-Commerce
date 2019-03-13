@@ -28,8 +28,8 @@ import Input from './Input';
 import Section from './Section';
 import messages from './messages';
 import { loadRepos } from '../App/actions';
-import { changeUsername } from './actions';
-import { makeSelectUsername } from './selectors';
+import { changeUsername, makeApiCall } from './actions';
+import { makeSelectUsername, fetchResponse } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import DatePicker from "react-datepicker";
@@ -60,7 +60,7 @@ export class HomePage extends React.PureComponent {
   }
 
   makeApiCall() {
-    this.setState({data: 'Api Call...'})
+    this.props.makeApi();
   }
 
   handleChange(date) {
@@ -80,13 +80,12 @@ export class HomePage extends React.PureComponent {
       error,
       repos,
     };
-
+    console.log('response', this.props.response);
     return (
       <div>
       <Login>
       <button class="test" onClick={this.makeApiCall}>Test </button>
-      <h4>{this.state.data}</h4>
-      
+      <h1> {this.props.response.id} </h1>
 
         <LeftDate>
           
@@ -121,11 +120,13 @@ HomePage.propTypes = {
   onSubmitForm: PropTypes.func,
   username: PropTypes.string,
   onChangeUsername: PropTypes.func,
+  response: PropTypes.object,
 };
 
 export function mapDispatchToProps(dispatch) {
   return {
     onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
+    makeApi: evt => dispatch(makeApiCall()),
     onSubmitForm: evt => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadRepos());
@@ -138,6 +139,7 @@ const mapStateToProps = createStructuredSelector({
   username: makeSelectUsername(),
   loading: makeSelectLoading(),
   error: makeSelectError(),
+  response: fetchResponse(),
 });
 
 const withConnect = connect(

@@ -5,7 +5,7 @@
  * Since this boilerplate uses a uni-directional data flow, specifically redux,
  * we have these actions which are the only way your application interacts with
  * your application state. This guarantees that your state is up to date and nobody
- * messes it up weirdly somewhere.
+ * messes it up weirdly somew(here.
  *
  * To add a new Action:
  * 1) Import your constant
@@ -15,7 +15,7 @@
  *    }
  */
 
-import { CHANGE_USERNAME } from './constants';
+import { CHANGE_USERNAME, MAKE_API_CALL, STORE_RESPONSE } from './constants';
 
 /**
  * Changes the input field of the form
@@ -28,5 +28,20 @@ export function changeUsername(name) {
   return {
     type: CHANGE_USERNAME,
     name,
+  };
+}
+
+export function makeApiCall() {
+  console.log('actions');
+  return {
+    type: MAKE_API_CALL,
+  };
+}
+
+export function storeResponse(payload) {
+  console.log('store actions');
+  return {
+    type: STORE_RESPONSE,
+    payload,
   };
 }

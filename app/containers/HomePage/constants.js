@@ -10,3 +10,5 @@
  */
 
 export const CHANGE_USERNAME = 'boilerplate/Home/CHANGE_USERNAME';
+export const MAKE_API_CALL = 'boilerplate/Home/MAKE_API_CALL';
+export const STORE_RESPONSE = 'boilerplate/Home/STORE_RESPONSE';
